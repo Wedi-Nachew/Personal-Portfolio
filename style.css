@@ -15,10 +15,18 @@ body {
     display: flex;
     flex-direction: column;
 }
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+p {
+    line-height: 1.75;
+}
 header {
     display: flex;
-    width: 84%;
-    padding: 10px 8%;
+    width: 70%;
+    padding: 10px 15%;
     border-bottom: 1px #3333334a solid;
     box-shadow: 0 0 5px #ababab;
     margin-bottom: 10px;
@@ -53,9 +61,9 @@ nav ul li a {
     align-items: center;
 }
 .home-wrapper {
-    padding: 40px 120px;
+    padding: 50px 140px;
     border-radius: 20px;
-    box-shadow: 0 0 5px #3333334a;
+    /* box-shadow: 0 0 5px #3333334a; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,4 +94,167 @@ nav ul li a {
 .home-wrapper p:last-of-type {
     font-size: 1.2rem;
     margin-top: 0;
+}
+.tech-stack {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.languages-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.languages-logo img {
+    width: 45px;
+    height: auto;
+}
+#about {
+    width: 70%;
+    padding: 10px 15%;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#about p {
+    max-width: 80ch;
+    font-size: 1.2rem;
+}
+#about .container-icons-about {
+    align-self: flex-end;
+    display: flex;
+    gap: 20px;
+}
+#about .container-icons-about li {
+    list-style: none;
+}
+#about .container-icons-about img {
+    width: 30px;
+    height: auto;
+}
+#projects {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 10px 15%;
+}
+#projects .container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+#projects .container > div {
+    max-width: 100%;
+    /* max-height: 500px; */
+    display: flex;
+    gap: 3rem;
+    box-shadow: 0 0 2px #b9b6b698;
+    border-radius: 20px;
+    padding: 20px;
+}
+#projects .container > div > div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#projects .container > div p {
+    max-width: 40ch;
+}
+#projects .container > div > img {
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+}
+#projects .container .projects-icons {
+    display: flex;
+    gap: 10px;
+}
+#projects .container .projects-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    text-decoration: none;
+}
+#projects .container .projects-icons button {
+    display: flex;
+    padding: 10px 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+#projects .container .projects-icons button:hover {
+    color: blue;
+}
+
+#projects .container .projects-icons img {
+    max-width: 30px;
+    max-height: 30px;
+}
+#contact {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 15%;
+    width: 70%;
+}
+.contact-addresses {
+    display: flex;
+    justify-content: space-between;
+}
+
+.location,
+.mail,
+.tel {
+    display: flex;
+    gap: 3px;
+}
+.location div,
+.mail div,
+.tel div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+}
+.contact-addresses h3 {
+    margin: 0;
+}
+.contact-addresses p,
+.contact-addresses a {
+    margin: 0;
+    font-size: 1rem;
+    text-decoration: none;
+    color: inherit;
+}
+.contact-addresses img {
+    max-width: 70px;
+    height: auto;
+}
+footer {
+    padding: 0 15%;
+    width: 70%;
+    background-color: #3a3a3a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.container-icons-footer {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin-bottom: 0;
+}
+.container-icons-footer img {
+    width: 32px;
+    height: auto;
+}
+footer p {
+    font-weight: 500;
+    font-size: 1.2rem;
 }
