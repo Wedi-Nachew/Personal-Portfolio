@@ -32,13 +32,16 @@ header {
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    z-index: 9999;
+    z-index: 99999;
     background-color: #fff;
 }
 header h1 {
     font-size: 2rem;
     font-weight: 500;
     margin: 0;
+}
+nav button.close {
+    display: none;
 }
 nav ul {
     display: flex;
@@ -58,7 +61,7 @@ nav ul li a {
 #home {
     width: 70%;
     padding: 90px 15% 30px;
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -77,13 +80,14 @@ nav ul li a {
     gap: 20px;
 }
 .home-wrapper .img-container {
+    max-width: 280px;
     border-radius: 50%;
     border: 5px solid #9e9e9ea1;
     overflow: hidden;
     padding: 0;
 }
 .home-wrapper .img-container img {
-    max-width: 300px;
+    width: 100%;
     margin: 0;
 }
 .home-wrapper p:first-of-type {
@@ -315,7 +319,6 @@ svg.github:hover #Dribbble-Light-Preview {
 .contact-addresses {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 #contact > h1 {
     font-size: 1.2rem;
@@ -406,4 +409,121 @@ footer svg {
 }
 footer svg:hover {
     fill: #008000b3;
+}
+@media (max-width: 800px) {
+    .home-wrapper {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .home-textual-info > p:first-child {
+        text-align: center;
+    }
+    .home-textual-info > p:last-child {
+        margin-bottom: 0;
+    }
+    .home-wrapper > div:first-child {
+        align-items: center;
+        gap: 0px;
+        margin-bottom: 5px;
+    }
+    .tech-stack {
+        flex-direction: column;
+        justify-items: center;
+        gap: 0.5rem;
+    }
+    .tech-stack > span img {
+        transform: rotate(45deg);
+        width: 70px;
+        height: 70px;
+        fill: #333333a4;
+    }
+    .tech-stack > p {
+        margin-bottom: -20px;
+    }
+    .languages-logo {
+        gap: 2rem;
+    }
+    .languages-logo > div {
+        width: 40px;
+        font-size: 0.9rem;
+    }
+    .languages-logo img {
+        width: 40px;
+    }
+    .contact-addresses {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+    header {
+        width: 86%;
+        padding: 10px 7%;
+    }
+    header button {
+        width: 40px;
+        height: 30px;
+        display: inline-flex;
+        justify-content: center;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    header button:hover {
+        /* background-color: #cfcfcf82; */
+    }
+    header button img {
+        width: 50px;
+        height: 40px;
+        cursor: pointer;
+    }
+    header nav {
+        display: none;
+    }
+
+    header nav.show-nav {
+        display: flex;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: #fff;
+        height: 100%;
+        width: 100%;
+        z-index: 999;
+        animation: slidein 500ms ease-out 50ms;
+    }
+    header nav.show-nav ul {
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-top: -5%;
+        /* animation: order 500ms ease-in-out 100ms; */
+    }
+    header nav.show-nav > button {
+        display: inline-flex;
+        position: absolute;
+        right: 7%;
+        top: 20px;
+    }
+    @keyframes slidein {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    @keyframes order {
+        from {
+            transform: scale(0);
+        }
+        to {
+            transform: scale();
+        }
+    }
 }
