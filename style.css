@@ -4,6 +4,7 @@
     --primary-font: "Mulish", sans-serif;
     --secondary-font: "Mali", cursive;
     box-sizing: border-box;
+    overflow-x: "hidden";
 }
 
 body {
@@ -40,7 +41,7 @@ header h1 {
     font-weight: 500;
     margin: 0;
 }
-nav button.close {
+header button {
     display: none;
 }
 nav ul {
@@ -52,7 +53,6 @@ nav ul {
 nav ul li {
     list-style-type: none;
 }
-
 nav ul li a {
     text-decoration: none;
     font-size: 1.1rem;
@@ -111,7 +111,6 @@ nav ul li a {
     gap: 20px;
     padding: 0;
 }
-
 .home-wrapper .container-icons li {
     list-style: none;
     width: 50px;
@@ -237,7 +236,7 @@ svg.github:hover #Dribbble-Light-Preview {
     border-radius: 20px;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2rem;
     place-items: center;
 }
@@ -286,7 +285,6 @@ svg.github:hover #Dribbble-Light-Preview {
     background-color: #008000b3;
     color: white;
 }
-
 #projects .container .projects-icons svg {
     width: 25px;
 }
@@ -456,8 +454,8 @@ footer svg:hover {
         align-items: flex-start;
     }
     header {
-        width: 86%;
-        padding: 10px 7%;
+        width: 90%;
+        padding: 10px 5%;
     }
     header button {
         width: 40px;
@@ -473,36 +471,34 @@ footer svg:hover {
         /* background-color: #cfcfcf82; */
     }
     header button img {
-        width: 50px;
-        height: 40px;
+        width: 42px;
+        height: 32px;
         cursor: pointer;
     }
     header nav {
         display: none;
     }
-
     header nav.show-nav {
+        animation: slidein 500ms ease-out 50ms alternate;
         display: flex;
         position: fixed;
         left: 0;
         top: 0;
-        background-color: #fff;
+        background-color: #ffffffad;
         height: 100%;
         width: 100%;
         z-index: 999;
-        animation: slidein 500ms ease-out 50ms;
+
+        backdrop-filter: blur(20px);
     }
     header nav.show-nav ul {
         flex-direction: column;
         align-items: center;
-        background-color: #fff;
         flex-grow: 1;
         justify-content: center;
+        gap: 2.5rem;
         align-items: center;
-        font-size: 1.8rem;
-        font-weight: 600;
-        margin-top: -5%;
-        /* animation: order 500ms ease-in-out 100ms; */
+        margin-top: -50%;
     }
     header nav.show-nav > button {
         display: inline-flex;
@@ -510,6 +506,20 @@ footer svg:hover {
         right: 7%;
         top: 20px;
     }
+    header nav.show-nav a {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+    #about,
+    #contact {
+        width: 86%;
+        padding: 10px 7%;
+    }
+    #projects {
+        width: 80%;
+        padding: 10px 7%;
+    }
+
     @keyframes slidein {
         from {
             transform: translateY(-100%);
@@ -518,12 +528,80 @@ footer svg:hover {
             transform: translateY(0);
         }
     }
-    @keyframes order {
-        from {
-            transform: scale(0);
-        }
-        to {
-            transform: scale();
-        }
+}
+
+@media (max-width: 500px) {
+    header {
+        width: 94%;
+        padding: 10px 3%;
+    }
+    header h1 {
+        font-size: 1.6rem;
+    }
+    header p,
+    #about p,
+    #contact p,
+    footer p {
+        font-size: 1rem;
+    }
+
+    .home-wrapper h2 {
+        font-size: 2.8rem;
+    }
+
+    .home-wrapper .img-container {
+        max-width: 240px;
+    }
+    #about {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    #about > img {
+        width: clamp(200px, 250px, 350px);
+    }
+    #about,
+    #contact,
+    footer {
+        width: 92%;
+        padding: 10px 4%;
+    }
+    #about .textual-info p:first-of-type,
+    #projects > p,
+    #contact > p {
+        font-size: 1.6rem;
+    }
+
+    #projects .container > div {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    #projects .container .projects-icons button {
+        padding: 5px 20px;
+        font-size: 1rem;
+    }
+    #projects .container .projects-icons a:last-of-type button {
+        padding: 5px 30px;
+    }
+    #projects .container .projects-icons svg {
+        width: 20px;
+    }
+    .contact-addresses p,
+    .contact-addresses a {
+        font-size: 0.9rem;
+    }
+    .location > div:first-of-type,
+    .mail > div:first-of-type,
+    .tel > div:first-of-type {
+        width: 35px;
+        height: 35px;
+    }
+    .contact-addresses img {
+        max-width: 20px;
+    }
+    footer p {
+        text-align: center;
+    }
+    .container-icons-footer svg {
+        max-width: 27px;
+        max-height: 27px;
     }
 }
