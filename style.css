@@ -149,6 +149,7 @@ svg.github:hover #Dribbble-Light-Preview {
 .tech-stack > span {
     color: #0000008b;
     font-size: 1.9rem;
+    transform: rotate(-45deg);
 }
 .languages-logo {
     display: flex;
@@ -430,7 +431,7 @@ footer svg:hover {
         gap: 0.5rem;
     }
     .tech-stack > span img {
-        transform: rotate(45deg);
+        transform: rotate(90deg);
         width: 70px;
         height: 70px;
         fill: #333333a4;
@@ -459,16 +460,18 @@ footer svg:hover {
     }
     header button {
         width: 40px;
-        height: 30px;
-        display: inline-flex;
+        height: 40px;
+        display: flex;
         justify-content: center;
+        align-items: center;
         padding: 0;
         background-color: transparent;
         border: none;
         cursor: pointer;
     }
     header button:hover {
-        /* background-color: #cfcfcf82; */
+        background-color: #3a3a3a36;
+        border-radius: 50%;
     }
     header button img {
         width: 42px;
@@ -476,22 +479,20 @@ footer svg:hover {
         cursor: pointer;
     }
     header nav {
-        display: none;
-    }
-    header nav.show-nav {
-        animation: slidein 500ms ease-out 50ms alternate;
-        display: flex;
         position: fixed;
         left: 0;
         top: 0;
+        display: flex;
         background-color: #ffffffad;
         height: 100%;
         width: 100%;
         z-index: 999;
-
         backdrop-filter: blur(20px);
+        transform: translate(0, -100%);
+        transition: transform 0.7s ease-in-out 50ms, opacity 0.5s ease;
     }
-    header nav.show-nav ul {
+
+    header nav ul {
         flex-direction: column;
         align-items: center;
         flex-grow: 1;
@@ -500,11 +501,15 @@ footer svg:hover {
         align-items: center;
         margin-top: -50%;
     }
-    header nav.show-nav > button {
+    header nav > button {
         display: inline-flex;
         position: absolute;
         right: 7%;
         top: 20px;
+    }
+    header nav.show-nav {
+        transform: translate(0, 0);
+        opacity: 100%;
     }
     header nav.show-nav a {
         font-size: 1.4rem;
@@ -518,15 +523,6 @@ footer svg:hover {
     #projects {
         width: 80%;
         padding: 10px 7%;
-    }
-
-    @keyframes slidein {
-        from {
-            transform: translateY(-100%);
-        }
-        to {
-            transform: translateY(0);
-        }
     }
 }
 
@@ -575,14 +571,14 @@ footer svg:hover {
     }
 
     #projects .container .projects-icons button {
-        padding: 5px 20px;
+        padding: 10px 26px;
         font-size: 1rem;
     }
     #projects .container .projects-icons a:last-of-type button {
-        padding: 5px 30px;
+        padding: 12px 36px;
     }
     #projects .container .projects-icons svg {
-        width: 20px;
+        width: 24px;
     }
     .contact-addresses p,
     .contact-addresses a {
